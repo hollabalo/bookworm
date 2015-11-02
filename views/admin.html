@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bookworm</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../assets/dashboard.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Bookworm</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/books">Books</a></li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/books">Books <span class="sr-only">(current)</span></a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div id="bookadmin"><h2 class="sub-header">Book List</h2>
+<!--           <form >
+            <input type="text" class="form-control" placeholder="Search book">
+          </form> -->
+          <button onclick="setModalAction('add')"data-toggle="modal" data-target="#bookmodal" type="button" class="btn btn-success">Add Book</button>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Author</th>
+                  <th>Title</th>
+                  <th>Price</th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody id="books">
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td class="center"><a class="btn btn-xs btn-success">Edit</a>&nbsp;<a class="btn btn-xs btn-danger">Delete</a></td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td class="center"><a class="btn btn-xs btn-success">Edit</a>&nbsp;<a class="btn btn-xs btn-danger">Delete</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="login" class="col-md-6">
+          <form id="loginform">
+              <h3>Book Admin Login</h3>
+              <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="username" class="form-control" id="username" placeholder="Username">
+              </div>
+              <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+              <button class="btn btn-primary">Login</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal fade" id="bookmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="bookActionTitle"></h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="control-label">Author:</label>
+                <input type="text" class="form-control" id="author">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">Title:</label>
+                <input type="text" class="form-control" id="title">
+                <input type="hidden" id="bookid">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">Picture (URL):</label>
+                <input type="text" class="form-control" id="picture">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">Download Link (Gutenberg):</label>
+                <input type="text" class="form-control" id="downloadLink">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">Description:</label>
+                <textarea class="form-control" id="description"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="control-label">Price:</label>
+                <input type="text" class="form-control" id="price">
+              </div>
+                <label for="message-text" class="control-label">Views:</label>
+                <span id="views"></span>
+              
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id="addButton" type="button" class="btn btn-primary" data-dismiss="modal"onclick="add();">Add book</button>
+            <button id="editButton" type="button" class="btn btn-primary" data-dismiss="modal" onclick="editProc();">Edit book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery-1.11.3.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/js.cookie.js"></script>
+    <script src="../assets/js/admin.js"></script>
+    <script>
+jQuery(document).ready(function($) {
+    $('#login').hide();
+    $('#bookadmin').hide();
+    $('#login').show();
+});
+</script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:        
+Server Hostname:        localhost
+Server Port:            8001
+
+Document Path:          /
+Document Length:        3147 bytes
+
+Concurrency Level:      50
+Time taken for tests:   24.854 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      32470000 bytes
+HTML transferred:       31470000 bytes
+Requests per second:    402.35 [#/sec] (mean)
+Time per request:       124.269 [ms] (mean)
+Time per request:       2.485 [ms] (mean, across all concurrent requests)
+Transfer rate:          1275.82 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:    15  124  17.5    114     192
+Waiting:       15  124  17.4    114     191
+Total:         16  124  17.4    114     192
+
+Percentage of the requests served within a certain time (ms)
+  50%    114
+  66%    129
+  75%    135
+  80%    138
+  90%    151
+  95%    159
+  98%    167
+  99%    171
+ 100%    192 (longest request)

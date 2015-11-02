@@ -1,0 +1,16 @@
+Project Bookworm
+Written in Node.js
+
+A complete web application that uses a custom RESTful API also written specifically for this application.
+Admins can manage book inventory. Users can browse and purchase books through the Paymayo custom payment gateway written in Java.
+User can also share the book they want in social media through the in-app Facebook integration.
+
+Node.js module dependencies:
+- Consolidate
+- Swig
+- Mongoose
+- OAuth
+
+This application uses MongoDB as the persistence layer.
+
+(c) John Michael Gerona
