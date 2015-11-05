@@ -9,8 +9,8 @@ var secret = {};
 var oa = new OAuth(
 	"https://api.twitter.com/oauth/request_token",
 	"https://api.twitter.com/oauth/access_token",
-	"chg2QhKIuQpazjQnV7AetUR89",
-	"HCH1WV3BHNDrwXtM7USZUdVHzA89bRcDgeh8m4Y2OvNY4WKUM9",
+	"xxxxxxx",
+	"xxxxxxx",
 	"1.0",
 	"http://www.localhost:8001?twitterok=true",
 	"HMAC-SHA1"
@@ -42,9 +42,9 @@ methods['//'] = function(req, res) {
 		var opts = {
 		  hostname: 'graph.facebook.com',
 		  port: 443,
-		  path: '/oauth/access_token?client_id=868867163197113&' +
+		  path: '/oauth/access_token?client_id=xxxxxx&' +
 		        'redirect_uri=http://' + cfg.baseUrl +':' + cfg.port + '/' + 
-		        '&client_secret=319e93798d6b43e3066bd132436023e1&code=' + u.query.code,
+		        '&client_secret=xxxxxx&code=' + u.query.code,
 		  method: 'GET'
 		};
 		util.getDataFromApiHttps(opts, function(err, data) {
